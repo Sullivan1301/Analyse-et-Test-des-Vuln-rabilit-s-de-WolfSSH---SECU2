@@ -1,0 +1,11 @@
+version: '3.8'
+services:
+  wolfssh:
+    build: .
+    container_name: wolfssh-container
+    volumes:
+      - ./scripts:/scripts
+      - ./logs:/logs
+    ports:
+      - '22222:22222'
+    tty: true

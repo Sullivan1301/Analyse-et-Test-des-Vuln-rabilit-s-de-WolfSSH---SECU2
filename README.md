@@ -45,20 +45,9 @@ Ce dépôt contient les ressources nécessaires pour analyser et reproduire des 
 ### **3. Lancer les Tests**
 - Utilisez les scripts Python dans le dossier `scripts/` pour tester les vulnérabilités :
   ```bash
-  python3 scripts/sftp_read_test.py
+  python3 scripts/test_***.py
   ```
 
 ### **4. Analyser les Logs**
 - Les logs ASAN sont générés dans le répertoire `logs/`. Utilisez-les pour identifier et déboguer les vulnérabilités.
-
-## **Contribuer**
-Les contributions sont les bienvenues ! Si vous découvrez d'autres vulnérabilités ou avez des suggestions d'améliorations, veuillez créer une pull request ou ouvrir une issue.
-
-## **Licence**
-Ce projet est sous licence MIT. Consultez le fichier `LICENSE` pour plus de détails.
-
----
-
-## **Remerciements**
-Un grand merci aux auteurs et mainteneurs de WolfSSL et WolfSSH pour leurs contributions open source aux bibliothèques de communication sécurisées. Ce projet vise à renforcer leur robustesse en identifiant des vulnérabilités potentielles.
 

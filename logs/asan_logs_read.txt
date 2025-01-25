@@ -1,30 +1,30 @@
 =================================================================
-==54==ERROR: AddressSanitizer: heap-buffer-overflow on address 0x5020000000dd at pc 0x709735b7d869 bp 0x7fff2ef31b40 sp 0x7fff2ef312f8
+==67==ERROR: AddressSanitizer: heap-buffer-overflow on address 0x5020000000dd at pc 0x7488ae8d7869 bp 0x7ffce0ff2490 sp 0x7ffce0ff1c48
 WRITE of size 8506 at 0x5020000000dd thread T0
-    #0 0x709735b7d868 in pread ../../../../src/libsanitizer/sanitizer_common/sanitizer_common_interceptors.inc:1013
-    #1 0x709735ab971d in wPread src/port.c:142
-    #2 0x709735ac60bf in wolfSSH_SFTP_RecvRead src/wolfsftp.c:3211
-    #3 0x709735abf0a7 in wolfSSH_SFTP_read src/wolfsftp.c:1334
-    #4 0x593067ae9fa8 in sftp_worker examples/echoserver/echoserver.c:925
-    #5 0x593067aea34b in server_worker examples/echoserver/echoserver.c:1009
-    #6 0x593067aec906 in echoserver_test examples/echoserver/echoserver.c:1819
-    #7 0x593067aecc01 in main examples/echoserver/echoserver.c:1862
-    #8 0x7097357df1c9 in __libc_start_call_main ../sysdeps/nptl/libc_start_call_main.h:58
-    #9 0x7097357df28a in __libc_start_main_impl ../csu/libc-start.c:360
-    #10 0x593067ae7c24 in _start (/wolfssh-1.4.6-stable/examples/echoserver/.libs/echoserver+0x4c24) (BuildId: 7441c51bf5a8b96b235c31a7c6403ea9f3fff7d7)
+    #0 0x7488ae8d7868 in pread ../../../../src/libsanitizer/sanitizer_common/sanitizer_common_interceptors.inc:1013
+    #1 0x7488ae81371d in wPread src/port.c:142
+    #2 0x7488ae8200bf in wolfSSH_SFTP_RecvRead src/wolfsftp.c:3211
+    #3 0x7488ae8190a7 in wolfSSH_SFTP_read src/wolfsftp.c:1334
+    #4 0x5c3fc36abfa8 in sftp_worker examples/echoserver/echoserver.c:925
+    #5 0x5c3fc36ac34b in server_worker examples/echoserver/echoserver.c:1009
+    #6 0x5c3fc36ae906 in echoserver_test examples/echoserver/echoserver.c:1819
+    #7 0x5c3fc36aec01 in main examples/echoserver/echoserver.c:1862
+    #8 0x7488ae5391c9 in __libc_start_call_main ../sysdeps/nptl/libc_start_call_main.h:58
+    #9 0x7488ae53928a in __libc_start_main_impl ../csu/libc-start.c:360
+    #10 0x5c3fc36a9c24 in _start (/wolfssh-1.4.6-stable/examples/echoserver/.libs/echoserver+0x4c24) (BuildId: 7441c51bf5a8b96b235c31a7c6403ea9f3fff7d7)
 
 0x5020000000dd is located 1 bytes after 12-byte region [0x5020000000d0,0x5020000000dc)
 allocated by thread T0 here:
-    #0 0x709735c009c7 in malloc ../../../../src/libsanitizer/asan/asan_malloc_linux.cpp:69
-    #1 0x709735ac601d in wolfSSH_SFTP_RecvRead src/wolfsftp.c:3205
-    #2 0x709735abf0a7 in wolfSSH_SFTP_read src/wolfsftp.c:1334
-    #3 0x593067ae9fa8 in sftp_worker examples/echoserver/echoserver.c:925
-    #4 0x593067aea34b in server_worker examples/echoserver/echoserver.c:1009
-    #5 0x593067aec906 in echoserver_test examples/echoserver/echoserver.c:1819
-    #6 0x593067aecc01 in main examples/echoserver/echoserver.c:1862
-    #7 0x7097357df1c9 in __libc_start_call_main ../sysdeps/nptl/libc_start_call_main.h:58
-    #8 0x7097357df28a in __libc_start_main_impl ../csu/libc-start.c:360
-    #9 0x593067ae7c24 in _start (/wolfssh-1.4.6-stable/examples/echoserver/.libs/echoserver+0x4c24) (BuildId: 7441c51bf5a8b96b235c31a7c6403ea9f3fff7d7)
+    #0 0x7488ae95a9c7 in malloc ../../../../src/libsanitizer/asan/asan_malloc_linux.cpp:69
+    #1 0x7488ae82001d in wolfSSH_SFTP_RecvRead src/wolfsftp.c:3205
+    #2 0x7488ae8190a7 in wolfSSH_SFTP_read src/wolfsftp.c:1334
+    #3 0x5c3fc36abfa8 in sftp_worker examples/echoserver/echoserver.c:925
+    #4 0x5c3fc36ac34b in server_worker examples/echoserver/echoserver.c:1009
+    #5 0x5c3fc36ae906 in echoserver_test examples/echoserver/echoserver.c:1819
+    #6 0x5c3fc36aec01 in main examples/echoserver/echoserver.c:1862
+    #7 0x7488ae5391c9 in __libc_start_call_main ../sysdeps/nptl/libc_start_call_main.h:58
+    #8 0x7488ae53928a in __libc_start_main_impl ../csu/libc-start.c:360
+    #9 0x5c3fc36a9c24 in _start (/wolfssh-1.4.6-stable/examples/echoserver/.libs/echoserver+0x4c24) (BuildId: 7441c51bf5a8b96b235c31a7c6403ea9f3fff7d7)
 
 SUMMARY: AddressSanitizer: heap-buffer-overflow ../../../../src/libsanitizer/sanitizer_common/sanitizer_common_interceptors.inc:1013 in pread
 Shadow bytes around the buggy address:
@@ -58,4 +58,4 @@ Shadow byte legend (one shadow byte represents 8 application bytes):
   ASan internal:           fe
   Left alloca redzone:     ca
   Right alloca redzone:    cb
-==54==ABORTING
+==67==ABORTING

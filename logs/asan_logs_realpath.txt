@@ -1,19 +1,18 @@
-Error with SSH shutdown.
 =================================================================
-==109==ERROR: AddressSanitizer: stack-buffer-overflow on address 0x77f32a30c5a0 at pc 0x77f32c3eb911 bp 0x7fff356a1e80 sp 0x7fff356a1e70
-WRITE of size 1 at 0x77f32a30c5a0 thread T0
-    #0 0x77f32c3eb910 in wolfSSH_SFTP_RecvRealPath src/wolfsftp.c:1132
-    #1 0x77f32c3ecc9b in wolfSSH_SFTP_read src/wolfsftp.c:1290
-    #2 0x651458cdafa8 in sftp_worker examples/echoserver/echoserver.c:925
-    #3 0x651458cdb34b in server_worker examples/echoserver/echoserver.c:1009
-    #4 0x651458cdd906 in echoserver_test examples/echoserver/echoserver.c:1819
-    #5 0x651458cddc01 in main examples/echoserver/echoserver.c:1862
-    #6 0x77f32c10d1c9 in __libc_start_call_main ../sysdeps/nptl/libc_start_call_main.h:58
-    #7 0x77f32c10d28a in __libc_start_main_impl ../csu/libc-start.c:360
-    #8 0x651458cd8c24 in _start (/wolfssh-1.4.6-stable/examples/echoserver/.libs/echoserver+0x4c24) (BuildId: 7441c51bf5a8b96b235c31a7c6403ea9f3fff7d7)
+==84==ERROR: AddressSanitizer: stack-buffer-overflow on address 0x762a1a503da0 at pc 0x762a1c626911 bp 0x7fff7b454cb0 sp 0x7fff7b454ca0
+WRITE of size 1 at 0x762a1a503da0 thread T0
+    #0 0x762a1c626910 in wolfSSH_SFTP_RecvRealPath src/wolfsftp.c:1132
+    #1 0x762a1c627c9b in wolfSSH_SFTP_read src/wolfsftp.c:1290
+    #2 0x598a262fdfa8 in sftp_worker examples/echoserver/echoserver.c:925
+    #3 0x598a262fe34b in server_worker examples/echoserver/echoserver.c:1009
+    #4 0x598a26300906 in echoserver_test examples/echoserver/echoserver.c:1819
+    #5 0x598a26300c01 in main examples/echoserver/echoserver.c:1862
+    #6 0x762a1c3481c9 in __libc_start_call_main ../sysdeps/nptl/libc_start_call_main.h:58
+    #7 0x762a1c34828a in __libc_start_main_impl ../csu/libc-start.c:360
+    #8 0x598a262fbc24 in _start (/wolfssh-1.4.6-stable/examples/echoserver/.libs/echoserver+0x4c24) (BuildId: 7441c51bf5a8b96b235c31a7c6403ea9f3fff7d7)
 
-Address 0x77f32a30c5a0 is located in stack of thread T0 at offset 416 in frame
-    #0 0x77f32c3eb64e in wolfSSH_SFTP_RecvRealPath src/wolfsftp.c:1104
+Address 0x762a1a503da0 is located in stack of thread T0 at offset 416 in frame
+    #0 0x762a1c62664e in wolfSSH_SFTP_RecvRealPath src/wolfsftp.c:1104
 
   This frame has 5 object(s):
     [48, 52) 'rSz' (line 1107)
@@ -25,17 +24,17 @@ HINT: this may be a false positive if your program uses some custom stack unwind
       (longjmp and C++ exceptions *are* supported)
 SUMMARY: AddressSanitizer: stack-buffer-overflow src/wolfsftp.c:1132 in wolfSSH_SFTP_RecvRealPath
 Shadow bytes around the buggy address:
-  0x77f32a30c300: f5 f5 f5 f5 f5 f5 f5 f5 f5 f5 f5 f5 f5 f5 f5 f5
-  0x77f32a30c380: f5 f5 f5 f5 f5 f5 f5 f5 f5 f5 f5 f5 f5 f5 f5 f5
-  0x77f32a30c400: f1 f1 f1 f1 f1 f1 04 f2 04 f2 00 00 00 00 00 00
-  0x77f32a30c480: f2 f2 f2 f2 00 00 00 00 00 00 00 00 00 00 00 00
-  0x77f32a30c500: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
-=>0x77f32a30c580: 00 00 00 00[f2]f2 f2 f2 f2 f2 f2 f2 00 00 00 00
-  0x77f32a30c600: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
-  0x77f32a30c680: 00 00 00 00 00 00 00 00 00 00 00 00 f3 f3 f3 f3
-  0x77f32a30c700: f3 f3 f3 f3 00 00 00 00 00 00 00 00 00 00 00 00
-  0x77f32a30c780: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
-  0x77f32a30c800: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x762a1a503b00: f5 f5 f5 f5 f5 f5 f5 f5 f5 f5 f5 f5 f5 f5 f5 f5
+  0x762a1a503b80: f5 f5 f5 f5 f5 f5 f5 f5 f5 f5 f5 f5 f5 f5 f5 f5
+  0x762a1a503c00: f1 f1 f1 f1 f1 f1 04 f2 04 f2 00 00 00 00 00 00
+  0x762a1a503c80: f2 f2 f2 f2 00 00 00 00 00 00 00 00 00 00 00 00
+  0x762a1a503d00: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+=>0x762a1a503d80: 00 00 00 00[f2]f2 f2 f2 f2 f2 f2 f2 00 00 00 00
+  0x762a1a503e00: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x762a1a503e80: 00 00 00 00 00 00 00 00 00 00 00 00 f3 f3 f3 f3
+  0x762a1a503f00: f3 f3 f3 f3 00 00 00 00 00 00 00 00 00 00 00 00
+  0x762a1a503f80: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x762a1a504000: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
 Shadow byte legend (one shadow byte represents 8 application bytes):
   Addressable:           00
   Partially addressable: 01 02 03 04 05 06 07 
@@ -55,4 +54,4 @@ Shadow byte legend (one shadow byte represents 8 application bytes):
   ASan internal:           fe
   Left alloca redzone:     ca
   Right alloca redzone:    cb
-==109==ABORTING
+==84==ABORTING

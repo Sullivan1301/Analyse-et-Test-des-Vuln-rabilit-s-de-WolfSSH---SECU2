@@ -1,19 +1,19 @@
 =================================================================
-==72==ERROR: AddressSanitizer: stack-buffer-overflow on address 0x718678900334 at pc 0x71867ad5f303 bp 0x7ffeec08def0 sp 0x7ffeec08d698
-WRITE of size 8 at 0x718678900334 thread T0
-    #0 0x71867ad5f302 in memcpy ../../../../src/libsanitizer/sanitizer_common/sanitizer_common_interceptors_memintrinsics.inc:115
-    #1 0x71867ac26854 in wolfSSH_SFTP_RecvWrite src/wolfsftp.c:3034
-    #2 0x71867ac2013b in wolfSSH_SFTP_read src/wolfsftp.c:1340
-    #3 0x64fbf97c6fa8 in sftp_worker examples/echoserver/echoserver.c:925
-    #4 0x64fbf97c734b in server_worker examples/echoserver/echoserver.c:1009
-    #5 0x64fbf97c9906 in echoserver_test examples/echoserver/echoserver.c:1819
-    #6 0x64fbf97c9c01 in main examples/echoserver/echoserver.c:1862
-    #7 0x71867a9401c9 in __libc_start_call_main ../sysdeps/nptl/libc_start_call_main.h:58
-    #8 0x71867a94028a in __libc_start_main_impl ../csu/libc-start.c:360
-    #9 0x64fbf97c4c24 in _start (/wolfssh-1.4.6-stable/examples/echoserver/.libs/echoserver+0x4c24) (BuildId: 7441c51bf5a8b96b235c31a7c6403ea9f3fff7d7)
+==49==ERROR: AddressSanitizer: stack-buffer-overflow on address 0x70ef5b700334 at pc 0x70ef5db09303 bp 0x7ffe630e6720 sp 0x7ffe630e5ec8
+WRITE of size 8 at 0x70ef5b700334 thread T0
+    #0 0x70ef5db09302 in memcpy ../../../../src/libsanitizer/sanitizer_common/sanitizer_common_interceptors_memintrinsics.inc:115
+    #1 0x70ef5d9d0854 in wolfSSH_SFTP_RecvWrite src/wolfsftp.c:3034
+    #2 0x70ef5d9ca13b in wolfSSH_SFTP_read src/wolfsftp.c:1340
+    #3 0x60aff87e1fa8 in sftp_worker examples/echoserver/echoserver.c:925
+    #4 0x60aff87e234b in server_worker examples/echoserver/echoserver.c:1009
+    #5 0x60aff87e4906 in echoserver_test examples/echoserver/echoserver.c:1819
+    #6 0x60aff87e4c01 in main examples/echoserver/echoserver.c:1862
+    #7 0x70ef5d6ea1c9 in __libc_start_call_main ../sysdeps/nptl/libc_start_call_main.h:58
+    #8 0x70ef5d6ea28a in __libc_start_main_impl ../csu/libc-start.c:360
+    #9 0x60aff87dfc24 in _start (/wolfssh-1.4.6-stable/examples/echoserver/.libs/echoserver+0x4c24) (BuildId: 7441c51bf5a8b96b235c31a7c6403ea9f3fff7d7)
 
-Address 0x718678900334 is located in stack of thread T0 at offset 52 in frame
-    #0 0x71867ac263c8 in wolfSSH_SFTP_RecvWrite src/wolfsftp.c:3002
+Address 0x70ef5b700334 is located in stack of thread T0 at offset 52 in frame
+    #0 0x70ef5d9d03c8 in wolfSSH_SFTP_RecvWrite src/wolfsftp.c:3002
 
   This frame has 6 object(s):
     [48, 52) 'fd' (line 3003) <== Memory access at offset 52 overflows this variable
@@ -26,17 +26,17 @@ HINT: this may be a false positive if your program uses some custom stack unwind
       (longjmp and C++ exceptions *are* supported)
 SUMMARY: AddressSanitizer: stack-buffer-overflow ../../../../src/libsanitizer/sanitizer_common/sanitizer_common_interceptors_memintrinsics.inc:115 in memcpy
 Shadow bytes around the buggy address:
-  0x718678900080: f5 f5 f5 f5 00 00 00 00 00 00 00 00 00 00 00 00
-  0x718678900100: f5 f5 f5 f5 f5 f5 f5 f5 f5 f5 f5 f5 f5 f5 f5 f5
-  0x718678900180: f5 f5 f5 f5 f5 f5 f5 f5 f5 f5 f5 f5 00 00 00 00
-  0x718678900200: f5 f5 f5 f5 f5 f5 f5 f5 f5 f5 f5 f5 f5 f5 f5 f5
-  0x718678900280: f5 f5 f5 f5 f5 f5 f5 f5 00 00 00 00 00 00 00 00
-=>0x718678900300: f1 f1 f1 f1 f1 f1[04]f2 04 f2 04 f2 00 f2 f2 f2
-  0x718678900380: 00 00 01 f2 f2 f2 f2 f2 00 00 03 f3 f3 f3 f3 f3
-  0x718678900400: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
-  0x718678900480: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
-  0x718678900500: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
-  0x718678900580: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x70ef5b700080: f5 f5 f5 f5 00 00 00 00 00 00 00 00 00 00 00 00
+  0x70ef5b700100: f5 f5 f5 f5 f5 f5 f5 f5 f5 f5 f5 f5 f5 f5 f5 f5
+  0x70ef5b700180: f5 f5 f5 f5 f5 f5 f5 f5 f5 f5 f5 f5 00 00 00 00
+  0x70ef5b700200: f5 f5 f5 f5 f5 f5 f5 f5 f5 f5 f5 f5 f5 f5 f5 f5
+  0x70ef5b700280: f5 f5 f5 f5 f5 f5 f5 f5 00 00 00 00 00 00 00 00
+=>0x70ef5b700300: f1 f1 f1 f1 f1 f1[04]f2 04 f2 04 f2 00 f2 f2 f2
+  0x70ef5b700380: 00 00 01 f2 f2 f2 f2 f2 00 00 03 f3 f3 f3 f3 f3
+  0x70ef5b700400: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x70ef5b700480: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x70ef5b700500: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x70ef5b700580: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
 Shadow byte legend (one shadow byte represents 8 application bytes):
   Addressable:           00
   Partially addressable: 01 02 03 04 05 06 07 
@@ -56,4 +56,4 @@ Shadow byte legend (one shadow byte represents 8 application bytes):
   ASan internal:           fe
   Left alloca redzone:     ca
   Right alloca redzone:    cb
-==72==ABORTING
+==49==ABORTING
